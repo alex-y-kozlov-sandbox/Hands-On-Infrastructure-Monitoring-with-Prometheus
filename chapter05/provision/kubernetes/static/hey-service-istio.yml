@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hey-service
+  namespace: monitoring
+  labels:
+    squad: frontend  
+spec:
+  selector:
+    app: hey
+  type: ClusterIP
+  ports:
+  - name: hey-port
+    protocol: TCP
+    port: 8000
+    targetPort: 8000 
